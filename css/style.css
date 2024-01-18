@@ -1,0 +1,145 @@
+/*4개의 링크를 임포트 해줘서 html에서 이 style.css 하나만 링크한다*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css'); /*폰트이미지쓰는 임포트 https://cdnjs.com*/
+@import url('font.css');
+@import url('animate.min.css');
+@import url('grid.css');
+html,body{
+    height:100%; /*높이는 잡을 수 없기에 먼저 잡아준다 (비디오 출력을 위해)*/
+}
+body{
+    font-family: 'IBM', sans-serif;
+    font-size:1rem;
+    color:#454545;
+    margin:0;
+}
+a,a:link{
+    color:#454545;
+    text-decoration: none;
+}
+a:hover{
+    color:#000;
+}
+.container{  /*기본크기*/
+  width:1400px;
+  margin-left:auto;
+  margin-right:auto;   /*블록은 이거 2개쓰면 가운데 정렬이 된다*/
+}
+
+/**************** HEADER ***************/
+header{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    padding: 30px 50px;  /*위아래 , 좌우*/
+    align-items: center;
+    position:fixed;
+    z-index:100;
+    color:#fff;
+}
+ul.main-nav{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: space-between;  
+  
+
+}
+a.logo{
+    font-size: 1.8em;
+    font-weight:800;
+    color:#fff;
+}
+nav{
+    width:53%;
+}
+.main-nav>li>a{   /*main-nav 클래스 안에 있는 li 안에 있는 a에만*/
+    font-size: 1.4em;
+    font-weight:500;
+    color:#fff;
+}
+.right{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    width:300px;
+}
+.searchform{
+    border:1px solid #fff;
+    margin-right:8px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-radius: 30px;
+    overflow:hidden;  /*안에 input박스가 벗어나서 짤린다 그래서 hidden 줘야함*/
+    position:relative;
+}
+input.search{
+    border:none;
+    outline: none;
+    padding:5px 10px 5px 35px;
+    font-size:1.2em;
+    background-color: transparent;
+    color:#fff;
+    
+}
+.search-icon{
+    position:absolute;
+    z-index:100;
+    top:13px;
+    left:12px;
+    
+}
+
+.btn-h-line{
+    background:transparent; /*배경 투명*/
+    outline: none;
+    border:none;
+    padding:5px;
+    border-radius: 15px;
+    border:1px solid #fff;
+    color:#fff;
+}
+.btn-list{
+    margin-left:8px;
+    padding:9px 10px;
+}
+.btn-list>i{
+    font-size:1.5em;
+    color:#fff;
+}
+/************** HERO *****************/
+.vdobox{
+    width:100%;   
+    height:100%;/*html과 body에 준 height때문에 높이를 잡을 수 있음*/
+    position:relative;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+}
+video.vdo{
+    width:100%;
+}
+.vdobox h1{
+    position:absolute;
+    color:#fff;
+    font-size:4em;
+    line-height:1.2em;
+    font-weight:900;
+    text-align:center;
+    top:200px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index:2;
+    text-shadow: 2px 2px 2px rgba(0,0,0,1);
+}
+.vdobox p{
+    position:absolute;
+    color:#333;
+    font-size:1.5em;
+    font-weight:300;
+    text-align:center;
+    top:400px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index:2;
+}
