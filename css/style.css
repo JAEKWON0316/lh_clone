@@ -24,7 +24,21 @@ a:hover{
   margin-left:auto;
   margin-right:auto;   /*블록은 이거 2개쓰면 가운데 정렬이 된다*/
 }
-
+.justify-between{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+.text-center{
+    text-align: center;
+}
+section{
+    padding-top:100px;
+}
+.d-flex{
+    display:flex;
+}
 /**************** HEADER ***************/
 header{
     width:100%;
@@ -44,6 +58,7 @@ header{
     z-index:1;
     border-bottom:1px solid #ccc;
     display:none;
+    box-shadow:0 0 15px 0 rgba(0,0,0,0.2);
 }
 
 .black-font{
@@ -407,6 +422,34 @@ ul.d-submenu>li:last-child{
     justify-content: space-between;
     align-items: center;
     margin-bottom:20px;
+    overflow:hidden; /*색 넣을거기 때문에 안보이게 hidden했다가 쿼리로 나오게한다*/
+    position:relative;
+}
+.d-sub-title a.act{
+    color:#fff;
+}
+.d-sub-title span.act{
+    border-radius:50%;
+    background:#16398B;
+    display:block;
+    width:25px;
+    height:25px;
+    color:#fff;
+    text-align: center;
+}
+.d-sub-title-before{
+    background:#008aff;
+    width:130%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left: -140%;
+    z-index:-1;
+    transform: skew(-45deg);
+    transition:all 0.3s;
+}
+.d-sub-title-before.d-sub-title-before-hover{
+    left:-20%;
 }
 .d-submenu ul li{
     list-style-type: disc;
@@ -424,6 +467,7 @@ ul.d-submenu>li:last-child{
     text-decoration: underline;
     color: #16398B !important;
 }
+
 @keyframes line-action {
     from{
       top:0;
@@ -510,4 +554,59 @@ ul.d-submenu>li:last-child{
         padding-left:8px;
         padding-right:8px;
     }
-} 
+}
+
+/*************** NEW GARDEN **************/
+.new-title{
+    font-size:3.5em;
+    color:#000;
+    letter-spacing: -2px;
+}
+.new-title em{
+   font-style: normal;
+   color:#2F5BC1;
+}
+.img{
+    margin-right:30px;
+    position:relative;
+}
+.img img{
+    object-fit: cover;
+    width:110px;
+    height:110px;
+}
+.img::before{
+    content:"";
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    width:110px;
+    height:110px;
+    border-radius: 50%;
+    box-sizing:content-box;
+    border:10px solid transparent;
+    outline: 2px dashed #ddd;
+    animation: rolling 20s infinite linear;
+}
+
+@keyframes rolling {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.desc-text{
+    width:330px;
+}
+.desc-text h2{
+    font-size:1.7em;
+    margin:0;
+}
+.desc-text p{
+    margin:0;
+    margin-top:5px;
+    font-size:1.2em;
+    font-weight:500;
+}
