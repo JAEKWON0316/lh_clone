@@ -35,5 +35,29 @@ $(function(){
       $(this).find("a").removeClass("black-font").addClass("act");
       $(this).find('span').addClass("act");
     });
+    $('.card').hover(function(){
+     $(this).find('.card-body>strong').css('text-decoration','underline');
+    },
+    function(){
+      $(this).find('.card-body>strong').css('text-decoration','none');
+    }
+    );
+    $('.card').hover(function(){
+      $(this).find('.card-img').css('background-color','rgba(0,0,255,0.1)');
+     },
+     function(){
+       $(this).find('.card-img').css('background-color','#fff');
+     }
+     );
+    
+    
+  //  $('.card').hover(
+  //   function(){
+  //   $(this).find('.card-body>h3').addClass('underline');
+  //   },
+  //   function(){
+  //     $('.card-body>h3').removeClass("underline").addClass('noneline');
+  //   }
+  //  )
 
 }); //jquery
