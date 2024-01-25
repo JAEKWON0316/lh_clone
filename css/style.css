@@ -59,7 +59,7 @@ header{
     height:100px;
     background:#fff;
     position:fixed;
-    z-index:1;
+    z-index:99;
     border-bottom:1px solid #ccc;
     display:none;
     box-shadow:0 0 15px 0 rgba(0,0,0,0.2);
@@ -389,6 +389,7 @@ ul.d-submenu{
     padding:0;
     margin:0;
     display:flex;
+    border-bottom:1px solid #ddd;
 }
 ul.d-submenu>li:first-child{
    width:25%;
@@ -757,4 +758,33 @@ li.y span{
 }
 .notice-list li a:last-child:hover{
     text-decoration: underline;
+}
+/******************* banner ****************/
+.banner-title{
+    position: relative;
+    margin-bottom:15px;
+}
+.btns{
+    position:absolute;
+    top:0;
+    right:0;
+    letter-spacing:2px;
+    font-size:1.2em;
+}
+.banner{
+    width:504px;
+    height:209px;
+    overflow:hidden;
+    position: relative;
+}
+.banner-in{
+    position: absolute;
+    top:0;
+    left:0;
+    width:2016px;
+    
+}
+.banner-in img{
+  width:504px;
+  float:left; /*이미지 바꿀 때 줄바꿈이 일어나지 않게*/
 }
