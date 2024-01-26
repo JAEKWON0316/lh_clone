@@ -1,4 +1,5 @@
 /*4개의 링크를 임포트 해줘서 html에서 이 style.css 하나만 링크한다 stylesheet만 쓸 수 있음 import는*/
+/* @import url('reset.css'); */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css'); /*폰트이미지쓰는 임포트 https://cdnjs.com*/
 @import url('font.css');
 @import url('animate.min.css');
@@ -39,6 +40,9 @@ section{
 .d-flex{
     display:flex;
 }
+.mt-50{
+    margin-top:50px;
+}
 /**************** HEADER ***************/
 header{
     width:100%;
@@ -55,7 +59,7 @@ header{
     height:100px;
     background:#fff;
     position:fixed;
-    z-index:1;
+    z-index:99;
     border-bottom:1px solid #ccc;
     display:none;
     box-shadow:0 0 15px 0 rgba(0,0,0,0.2);
@@ -385,6 +389,7 @@ ul.d-submenu{
     padding:0;
     margin:0;
     display:flex;
+    border-bottom:1px solid #ddd;
 }
 ul.d-submenu>li:first-child{
    width:25%;
@@ -556,7 +561,7 @@ ul.d-submenu>li:last-child{
     }
 }
 
-/*************** NEW GARDEN **************/
+/*************** SECTION NEW **************/
 .new-title{
     font-size:3.5em;
     color:#000;
@@ -611,52 +616,217 @@ ul.d-submenu>li:last-child{
     font-weight:500;
 }
 .card{
+    background-color:#F4F6F8;
+    border-radius:8px;
+    padding:2em;
     display:flex;
-    padding: 40px 30px;
-    align-items: center;
-    height:75%;
-    background:#F4F6F8;
-    border:1px solid #F4F6F8;
-    border-radius:10px;
-    letter-spacing: -1px;
-    transition: all 0.2s;
-    margin :0 auto;
+    align-items:center;
+    cursor:pointer;
+    transition: all 500ms;
 }
+
 .card:hover{
-    box-shadow:10px 10px 15px rgba(0,0,0,0.2);
-    transform: translateY(-25px);
+    background-color:#2f5bc1;
     color:#fff;
-    background:#2F5BC1;
+    transform: translateY(-30px);
+    box-shadow: 0 10px 25px 0 rgba(27, 77, 199, 0.5);
 }
-.card-body p{
-    font-size:1em;
-    margin-bottom:10px;
+.card:hover>.card-img{
+    background:#d4e0fc;
 }
-.card-body strong{
-    font-size:1.3em;
-    line-height: 1.4; 
+.card:hover .card-body h3::after{
+    width:100%; /*아까 만든 가상클래스를 넓이가 100프로 되게함 일자로 쭉이어지게 height는 1px이므로*/
 }
 
 .card-img{
-    text-align: center;
-    background:#fff;
     width:86px;
     height:86px;
-    border:1px solid #fff;
-    border-radius: 100%;
-    overflow:hidden;
-    flex-shrink: 0;    
+    background-color:#fff;
+    border-radius:50%;
+    text-align:center;
 }
-.card-img img{
-    vertical-align: middle;
+.card-img i{
+    font-size:50px;
+    line-height:2em;
+    color:#2f5bc1;
 }
 .card-body{
-    margin-top:10px;
-    margin-left:20px;    
+    width:calc(100% - 100px);
+    padding-left:15px;
 }
-.underline{
+.card-body h3, .card-body p{
+    margin:0;
+    padding:0;
+}
+.card-body p{
+    letter-spacing: -1.7px;
+}
+.card-body h3{
+    position:relative;
+    display:inline-block;
+    margin-bottom:3px;
+}
+.card-body h3::after{  /*card-body h3의 밑에왼쪽에 after가상 클래스 높이가 1px인 점을 만든다.*/
+    content:"";
+    display:block;
+    width:0;
+    height:1px;
+    background-color:#fff; 
+    bottom:0;
+    left:0;
+    position:absolute;
+    transition: all 500ms;
+}
+.notice{
+    border:1px solid #ccc;
+    border-radius:10px;
+    padding: 20px 30px;
+}
+.notice h1, .notice p, .notice ul{
+    margin:0;
+    padding:0;
+}
+.notice-title-box h1{
+    font-size:1.8em;
+}
+ul.notice-nav{
+    list-style:none;
+    display:flex;
+    font-size:1.3em;
+    font-weight:500;
+}
+ul.notice-nav li{
+    cursor:pointer;
+    padding-right:15px;
+    padding-left:15px;
+    position:relative;
+}
+ul.notice-nav .nav-list::after{
+   content:"";
+   height:15px;
+   width:1px;
+   background:#ddd;
+   display:block;
+   transform: rotate(30deg);
+   position:absolute;
+   top:10px;
+   left:0px;
+}
+.notice-nav li a{
+   position:relative;
+   display:inline-block;
+}
+.notice-nav li a::after{
+    content:"";
+    display:block;
+    width: 100%;
+    height:3px;
+    background:#16398B;
+    transform: scaleX(0);
+    transition: all .4s;
+}
+.notice-nav li.active a::after{
+    transform: scaleX(1);
+}
+.notice ul.notice-list{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    margin-top:2em;
+}
+.notice-list li{
+    padding: 15px 5px;
+    font-size:1.2em;
+    font-weight:500;
+}
+.notice-list li:not(:last-child){
+    border-bottom:1px dashed #ddd;
+}
+.notice-list span{
+    padding:3px 20px;
+    border-radius:20px;
+    margin-right:10px;
+}
+li.n span{
+   background:#dee8ff;
+}
+li.m span{
+    background:#FFE6A3;
+}
+li.y span{
+    background:#E5E5E5;
+}
+.notice-list li a:last-child:hover{
     text-decoration: underline;
 }
-.noneline{
-    text-decoration: none;
+/******************* banner ****************/
+.banner-title{
+    position: relative;
+    margin-bottom:15px;
+}
+.btns{
+    position:absolute;
+    top:0;
+    right:0;
+    letter-spacing:2px;
+    font-size:1.2em;
+}
+.banner{
+    width:504px;
+    height:209px;
+    overflow:hidden;
+    position: relative;
+}
+.banner-in{
+    position: absolute;
+    top:0;
+    left:0;
+    width:2016px;
+    
+}
+.banner-in img{
+  width:504px;
+  float:left; /*이미지 바꿀 때 줄바꿈이 일어나지 않게*/
+}
+.btns i{
+    cursor:pointer;
+}
+.notice-service{
+    background: #ECF0F5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 30px;
+    padding: 30px 40px;
+    display: flex;
+    height: 143px;
+}
+.notice-service h1,
+.notice-service p{
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+.service-title{
+    width: 40%;
+}
+.service-title h1{
+    font-size: 2.2em;
+}
+.service-title p{
+    margin-top: 10px;
+    font-size: 2.1em;
+    color: #2F5BC1;
+}
+.service-time{
+    width: 60%;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    letter-spacing: -1.8px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.service-time p{
+    margin-top: 10px;
 }
