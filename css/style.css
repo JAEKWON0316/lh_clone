@@ -25,6 +25,11 @@ a:hover{
   margin-left:auto;
   margin-right:auto;   /*블록은 이거 2개쓰면 가운데 정렬이 된다*/
 }
+h1 small{
+    font-size:20px;
+    color:#666;
+    margin-left:30px
+}
 .justify-between{
     justify-content: space-between;
 }
@@ -563,7 +568,7 @@ ul.d-submenu>li:last-child{
 
 /*************** SECTION NEW **************/
 .new-title{
-    font-size:3.5em;
+    font-size:3.7em;
     color:#000;
     letter-spacing: -2px;
 }
@@ -612,7 +617,7 @@ ul.d-submenu>li:last-child{
 .desc-text p{
     margin:0;
     margin-top:5px;
-    font-size:1.2em;
+    font-size:1.1em;
     font-weight:500;
 }
 .card{
@@ -639,8 +644,8 @@ ul.d-submenu>li:last-child{
 }
 
 .card-img{
-    width:86px;
-    height:86px;
+    width:100px;
+    height:100px;
     background-color:#fff;
     border-radius:50%;
     text-align:center;
@@ -829,4 +834,86 @@ li.y span{
 }
 .service-time p{
     margin-top: 10px;
+}
+/********** 배경 색상 **********/
+.background-blue{
+    background-color:#eff4ff;
+    margin-top:500px;
+    position:relative;
+}
+
+/********* section major **************/
+#major{
+    padding-left:40px;
+    padding-right:40px;
+    position:relative;
+    top: -500px;
+}
+.major-first, .major-second, .major-third{
+    height:500px;
+    border-radius:15px;
+    overflow:hidden;
+    background-size: cover;
+    position:relative;
+}
+.major-first {
+    background: url(../images/buildings-1850129_1920.jpg) no-repeat;
+}
+.major-second{
+    background: url(../images/architecture-2256489_1920.jpg) no-repeat center top;
+}
+.major-third{
+    background: url(../images/living-room-1835923_1920.jpg) no-repeat center bottom;
+}
+.major-textbox{
+    width:60%;
+    border-top-left-radius:0px;
+    border-top-right-radius:40px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius:15px;
+    background:#fff;
+    overflow:hidden;
+    height: 200px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    padding: 30px;
+}
+#major a.circle{
+    position:absolute;
+    left: calc(50% - 32.5px);
+    bottom: 65px;
+    display:block;
+    background:rgba(0,0,0,0.5);
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    text-align: center;
+    font-size:2em;
+    font-weight:400;
+    color:#fff;
+    line-height:65px;
+    transition:all 300ms;
+}
+#major a.circle:hover{
+    transform: rotateZ(360deg);
+}
+#major h2.tsf{
+    transform: rotateZ(270deg) translate(-40px);
+    color:#fff;
+}
+.major-textbox h2{
+   font-size:1.8em;
+}
+.major-textbox h2 em{
+    font-style:normal;
+    color:#2F5BC1;
+}
+.major-textbox ul{
+    margin:0;
+    padding:0;
+    list-style-position: inside;
+}
+.major-textbox ul li{
+    padding:0;
 }
